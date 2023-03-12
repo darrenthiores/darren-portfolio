@@ -8,11 +8,13 @@ import {
   Text,
   useMediaQuery,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { ReactElement } from "react";
 import { BsFillCartPlusFill } from "react-icons/bs";
 import useApp from "../../hooks/useApp";
 import { NavItems } from "../../utils/interfaces/AppInterfaces";
 import breakPoints from "../../utils/interfaces/Breakpoints";
+import container, { item } from "../../utils/motionVariants";
 import NavLink from "./components/NavLink";
 
 function Navbar(props: NavItems): ReactElement {
@@ -40,9 +42,13 @@ function Navbar(props: NavItems): ReactElement {
         h="100%"
         margin="auto"
         w={breakPoints}
+        as={motion.div}
+        variants={container}
+        initial="hidden"
+        animate="show"
       >
         {/* LOGO */}
-        <Link href="#hero">
+        <Link as={motion.a} variants={item} href="#hero">
           <Image transition="all .3s ease" w="6rem" src={logo} />
         </Link>
         {/* NAVIGATION LINKS */}

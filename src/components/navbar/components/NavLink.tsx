@@ -1,5 +1,7 @@
 import { Link, Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import useApp from "../../../hooks/useApp";
+import { item } from "../../../utils/motionVariants";
 
 interface NavLinkProps {
   nav: string;
@@ -16,6 +18,8 @@ function NavLink(props: NavLinkProps) {
       href={nav === "Home" ? "#hero" : `#${nav.toLowerCase()}`}
     >
       <Text
+        as={motion.p}
+        variants={item}
         display="flex"
         justifyContent="center"
         alignItems="center"

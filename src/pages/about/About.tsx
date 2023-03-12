@@ -9,9 +9,11 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { AiOutlineDownload } from "react-icons/ai";
+import { motion } from "framer-motion";
 import useObserver from "../../hooks/useObserver";
 import SectionTItle from "../../components/SectionTItle";
 import breakPoints from "../../utils/interfaces/Breakpoints";
+import container, { item } from "../../utils/motionVariants";
 
 function About() {
   const { ref } = useObserver("About");
@@ -28,13 +30,33 @@ function About() {
         direction={{ base: "column", md: "row" }}
         marginTop="6rem"
         spacing="2.5rem"
+        as={motion.div}
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
       >
-        <Center flex={1} bg="white" w="20rem" h="20rem" borderRadius=".5rem">
+        <Center
+          flex={1}
+          bg="white"
+          w="20rem"
+          h="20rem"
+          borderRadius=".5rem"
+          as={motion.div}
+          variants={item}
+        >
           <Text color="palette.primary" fontFamily="inter">
             You Image Here Maybe
           </Text>
         </Center>
-        <Center flexDir="column" alignItems="start" gap="1.5rem" flex={1}>
+        <Center
+          flexDir="column"
+          alignItems="start"
+          gap="1.5rem"
+          flex={1}
+          as={motion.div}
+          variants={item}
+        >
           <Text fontFamily="inter" fontWeight="light" fontSize="1.1rem">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim

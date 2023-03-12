@@ -17,6 +17,8 @@ import useObserver from "../../hooks/useObserver";
 import BgImage from "../../assets/bgImage.svg";
 import SectionTItle from "../../components/SectionTItle";
 import breakPoints from "../../utils/interfaces/Breakpoints";
+import { motion } from "framer-motion";
+import container, { item } from "../../utils/motionVariants";
 
 function Portfolio() {
   const { ref } = useObserver("Portfolio");
@@ -30,11 +32,20 @@ function Portfolio() {
       margin="auto"
     >
       <SectionTItle title="My Portfolio." colored="Portfolio" />
-      <Wrap marginTop="6rem" justify="center" spacing="1.2rem">
+      <Wrap
+        marginTop="6rem"
+        justify="center"
+        spacing="1.2rem"
+        as={motion.div}
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
         {[...Array(5)].map((_, index) => {
           return (
             <WrapItem key={index}>
-              <Card w="25rem">
+              <Card w="25rem" as={motion.div} variants={item}>
                 <CardHeader
                   fontSize="1.3rem"
                   bg="linear-gradient(to top right, #d450d9, #271f73)"
