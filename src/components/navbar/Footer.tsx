@@ -11,7 +11,7 @@ function Footer() {
       bgSize="cover"
     >
       <Text fontSize="1rem" color="palette.secondary">
-        Copyright 202
+        Copyright 2023
       </Text>
     </Center>
   );

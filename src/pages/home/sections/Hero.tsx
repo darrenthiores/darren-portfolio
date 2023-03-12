@@ -6,6 +6,8 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { FaProjectDiagram } from "react-icons/fa";
+import { AiFillPhone } from "react-icons/ai";
 import useObserver from "../../../hooks/useObserver";
 import breakPoints from "../../../utils/interfaces/Breakpoints";
 
@@ -51,18 +53,19 @@ function Hero() {
           </Text>
           <HStack spacing="1rem" paddingTop="2.5rem">
             <Button
-              p="1.8rem 2.5rem"
+              p="1.8rem 2.8rem 1.8rem 2rem"
               bg="palette.accent"
               fontSize="1.1rem"
               fontWeight="bold"
               fontFamily="inter"
+              leftIcon={<FaProjectDiagram />}
               borderBottomRightRadius="5rem"
               _hover={{ bg: "palette.accent_hover" }}
             >
               My Portfolio
             </Button>
             <Button
-              p="1.8rem 2.5rem"
+              p="1.8rem 2rem 1.8rem 2.8rem"
               color="palette.accent"
               bg="transparent"
               border="1px solid"
@@ -70,6 +73,7 @@ function Hero() {
               fontSize="1.1rem"
               fontWeight="bold"
               fontFamily="inter"
+              rightIcon={<AiFillPhone />}
               borderTopLeftRadius="5rem"
               _hover={{}}
             >
