@@ -13,11 +13,11 @@ import {
   WrapItem,
 } from "@chakra-ui/react";
 import React from "react";
+import { motion } from "framer-motion";
 import useObserver from "../../hooks/useObserver";
 import BgImage from "../../assets/bgImage.svg";
 import SectionTItle from "../../components/SectionTItle";
 import breakPoints from "../../utils/interfaces/Breakpoints";
-import { motion } from "framer-motion";
 import container, { item } from "../../utils/motionVariants";
 
 function Portfolio() {

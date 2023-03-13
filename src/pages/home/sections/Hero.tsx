@@ -40,7 +40,7 @@ function Hero() {
       >
         <VStack align="center" justify="center" w="100%">
           <Text
-            fontSize="5.5rem"
+            fontSize={{ base: "4rem", md: "5.5rem" }}
             fontWeight="bold"
             textAlign="center"
             as={motion.p}
@@ -57,8 +57,8 @@ function Hero() {
             </Highlight>
           </Text>
           <Text
-            w="60%"
-            fontSize="1.2rem"
+            w={{ base: "100%", md: "60%" }}
+            fontSize={{ base: "1rem", md: "1.2rem" }}
             fontWeight="normal"
             fontFamily="inter"
             textAlign="center"
@@ -74,9 +74,9 @@ function Hero() {
             variants={item}
           >
             <Button
-              p="1.8rem 2.8rem 1.8rem 2rem"
+              p="1.8em 2.8em 1.8em 2em"
               bg="palette.accent"
-              fontSize="1.1rem"
+              fontSize={{ base: ".8rem", md: "1.1rem" }}
               fontWeight="bold"
               fontFamily="inter"
               leftIcon={<FaProjectDiagram />}
@@ -88,12 +88,12 @@ function Hero() {
               My Portfolio
             </Button>
             <Button
-              p="1.8rem 2rem 1.8rem 2.8rem"
+              p="1.8em 2em 1.8em 2.8em"
               color="palette.accent"
               bg="transparent"
               border="1px solid"
               borderColor="palette.accent"
-              fontSize="1.1rem"
+              fontSize={{ base: ".8rem", md: "1.1rem" }}
               fontWeight="bold"
               fontFamily="inter"
               rightIcon={<AiFillPhone />}

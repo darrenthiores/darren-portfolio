@@ -4,8 +4,8 @@ import React from "react";
 function BgElement2() {
   return (
     <Box
-      w="20rem"
-      h="21rem"
+      w={{ base: "10rem", md: "20rem" }}
+      h={{ base: "11rem", md: "21rem" }}
       transform="rotate(50deg)"
       bg="linear-gradient(to bottom, #2c1e51, #241e52)"
       //   bg="#241e52"
