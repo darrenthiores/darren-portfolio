@@ -8,6 +8,7 @@ import {
   CardHeader,
   Center,
   Grid,
+  Image,
   Text,
   Wrap,
   WrapItem,
@@ -19,9 +20,18 @@ import BgImage from "../../assets/bgImage.svg";
 import SectionTItle from "../../components/SectionTItle";
 import breakPoints from "../../utils/interfaces/Breakpoints";
 import container, { item } from "../../utils/motionVariants";
+import SampleImage from "../../assets/portfolio_images/sample.jpg";
 
 function Portfolio() {
   const { ref } = useObserver("Portfolio");
+
+  const sample_images = [
+    SampleImage,
+    SampleImage,
+    SampleImage,
+    SampleImage,
+    SampleImage,
+  ];
 
   return (
     <Box
@@ -42,7 +52,7 @@ function Portfolio() {
         whileInView="show"
         viewport={{ once: true }}
       >
-        {[...Array(5)].map((_, index) => {
+        {sample_images.map((image, index) => {
           return (
             <WrapItem key={index}>
               <Card w="25rem" as={motion.div} variants={item}>
@@ -53,9 +63,17 @@ function Portfolio() {
                 >
                   <Center flexDir="column" gap="1.5rem">
                     <Center h="10rem" w="100%" borderRadius=".3rem" bg="white">
-                      <Text fontFamily="inter" fontSize=".9rem">
+                      {/* <Text fontFamily="inter" fontSize=".9rem">
                         Some Image Here of the Work
-                      </Text>
+                      </Text> */}
+                      <Image
+                        borderRadius=".3rem"
+                        src={image}
+                        alt="Sample Image"
+                        w="100%"
+                        h="100%"
+                        objectFit="cover"
+                      />
                     </Center>
                     <Text color="white">Title of the Work</Text>
                   </Center>
