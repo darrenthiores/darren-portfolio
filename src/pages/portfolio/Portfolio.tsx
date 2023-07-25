@@ -12,6 +12,7 @@ import {
   Text,
   Wrap,
   WrapItem,
+  Link
 } from "@chakra-ui/react";
 import React from "react";
 import { motion } from "framer-motion";
@@ -20,18 +21,51 @@ import BgImage from "../../assets/bgImage.svg";
 import SectionTItle from "../../components/SectionTItle";
 import breakPoints from "../../utils/interfaces/Breakpoints";
 import container, { item } from "../../utils/motionVariants";
-import SampleImage from "../../assets/portfolio_images/sample.jpg";
+import Image1 from "../../assets/portfolio_images/detaq_ss.png";
+import Image2 from "../../assets/portfolio_images/translator_kmm_ss.png";
+import Image3 from "../../assets/portfolio_images/calorie_tracker_ss.png";
+import Image4 from "../../assets/portfolio_images/efifalite_ss.png";
+import Image5 from "../../assets/portfolio_images/ajarin_ss.png";
+import Image6 from "../../assets/portfolio_images/note_kmm_ss.png";
 
 function Portfolio() {
   const { ref } = useObserver("Portfolio");
 
   const sample_images = [
-    SampleImage,
-    SampleImage,
-    SampleImage,
-    SampleImage,
-    SampleImage,
+    Image1,
+    Image2,
+    Image3,
+    Image4,
+    Image5,
+    Image6,
   ];
+
+  const titles = [
+    "DetaQ",
+    "TranslatorKMM",
+    "CalorieTracker",
+    "EFifa-Lite",
+    "Ajarin",
+    "NoteKMM"
+  ];
+
+  const descriptions = [
+    "DetaQ is an app to help people prevent, treat, and follow up on heart attacks. This app designed for two users which are the patient and the families member. This app also connected to a smart wristband through IOT, where the wristband will used to detect patient's heart rate and send sos to families member.",
+    "This app is a translator app, works just like any translation app, user can choose which language to which language and just type the word or sentence they want to translate. Any translated words will be inserted to local database as a history which user can easily use at any time. Not just by text, user can use voice to text translation. This app use KMM (Kotlin Multiplatform Mobile) for the data layer to view model and supports Android and IOS.",
+    "This is a Calorie Tracker application, which can track user daily calories consumption based on what user consumed in a day, then based on user goals preference and current information, the app will tell user about the ideal calories consumption and will warn user when the total consumption is exceeds the ideal calories in a day.",
+    "eFifa Lite -- A football manager app, you can play as a manager and build your own team with players which you can aquire by draw. This is not a real football game app thought, it is only a for fun app where you can choose players by position and team's formation. You can aquire player by draw, you can choose which league to draw and it cost 100 in game coin. You will get 1100 coin in the first login and 100 coin every 7am WIB from claiming login gift.",
+    "Ajarin has the main goal, which is to connect students who want to be taught by other people with students who want to make extra money by teaching other people. Through Ajarin students can take private courses taught directly by mentors of the same age at affordable costs, without any boundaries between students and teachers so that students can interact more freely, such as between friends and friends.\n This app have a lot of features, like messaging (still saved in local database), Nested Scroll (Mentor Profile), Picking Image (Review Mentor), etc.",
+    "This app is a note app, a CRUD app, where user can create note, read note, update note, and delete note, also search a note. This app use KMM (Kotlin Multiplatform Mobile) for the data layer and supports Android and IOS."
+  ];
+
+  const links = [
+    "https://github.com/darrenthiores/detaQ",
+    "https://github.com/darrenthiores/TranslatorKMM",
+    "https://github.com/darrenthiores/CalorieTracker",
+    "https://github.com/darrenthiores/eFifa-Lite",
+    "https://github.com/darrenthiores/Ajarin",
+    "https://github.com/darrenthiores/NoteAppKMM"
+  ]
 
   return (
     <Box
@@ -62,7 +96,7 @@ function Portfolio() {
                   borderTopRadius=".3rem"
                 >
                   <Center flexDir="column" gap="1.5rem">
-                    <Center h="10rem" w="100%" borderRadius=".3rem" bg="white">
+                    <Center h="15rem" w="100%" borderRadius=".3rem" bg="white">
                       {/* <Text fontFamily="inter" fontSize=".9rem">
                         Some Image Here of the Work
                       </Text> */}
@@ -72,31 +106,31 @@ function Portfolio() {
                         alt="Sample Image"
                         w="100%"
                         h="100%"
-                        objectFit="cover"
+                        objectFit="scale-down"
                       />
                     </Center>
-                    <Text color="white">Title of the Work</Text>
+                    <Text color="white">{titles[index]}</Text>
                   </Center>
                 </CardHeader>
                 <CardBody>
                   <Text fontFamily="inter" fontWeight="light">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur.
+                  {descriptions[index]}
                   </Text>
                 </CardBody>
                 <CardFooter fontSize="1.2rem">
-                  <Button
+                  <Link
                     fontFamily="inter"
-                    bg="linear-gradient(to top right, #d450d9, #271f53)"
-                    color="white"
-                    _hover={{}}
+                    href={links[index]}
+                    isExternal
                   >
-                    View Live
-                  </Button>
+                    <Button
+                      bg="linear-gradient(to top right, #d450d9, #271f53)"
+                      color="white"
+                      _hover={{}}
+                    >
+                      View
+                    </Button>
+                  </Link>
                 </CardFooter>
               </Card>
             </WrapItem>

@@ -8,6 +8,8 @@ import {
   Text,
   Textarea,
   VStack,
+  Link,
+  Image
 } from "@chakra-ui/react";
 import React from "react";
 import { BsFillSendFill } from "react-icons/bs";
@@ -33,7 +35,7 @@ function Contact() {
         flexDir="column"
         gap="1rem"
       >
-        <VStack marginTop="6rem" w={{ base: "100%", xl: "60%" }}>
+        {/* <VStack marginTop="6rem" w={{ base: "100%", xl: "60%" }}>
           <HStack w="100%" as={motion.div} variants={item}>
             <Input
               placeholder="First Name"
@@ -94,7 +96,58 @@ function Contact() {
           variants={item}
         >
           Send Email
-        </Button>
+        </Button> */}
+
+        <VStack marginTop="6rem" w={{ base: "100%", xl: "60%" }}>
+          <Link
+            fontFamily="inter"
+            href="mailto:darrenthiores@gmail.com"
+            isExternal
+          >
+            <Image
+            borderRadius=".3rem"
+            src="https://img.shields.io/badge/gmail:  darrenthiores-%23EA4335.svg?style=for-the-badge&logo=gmail&logoColor=white"
+            alt="Sample Image"
+            />
+          </Link>
+          
+        </VStack>
+
+        <Link
+            fontFamily="inter"
+            href="https://twitter.com/darrenthiores"
+            isExternal
+          >
+            <Image
+            borderRadius=".3rem"
+            src="https://img.shields.io/badge/twitter:  darrenthiores-%2300acee.svg?color=1DA1F2&style=for-the-badge&logo=twitter&logoColor=white"
+            alt="Sample Image"
+            />
+          </Link>
+
+          <Link
+            fontFamily="inter"
+            href="https://linkedin.com/in/darrenthiores"
+            isExternal
+          >
+            <Image
+            borderRadius=".3rem"
+            src="https://img.shields.io/badge/linkedin:  darrenthiores-%2300acee.svg?color=405DE6&style=for-the-badge&logo=linkedin&logoColor=white"
+            alt="Sample Image"
+            />
+          </Link>
+
+          <Link
+            fontFamily="inter"
+            href="https://linkedin.com/in/darrenthiores"
+            isExternal
+          >
+            <Image
+            borderRadius=".3rem"
+            src="https://img.shields.io/badge/github:  darrenthiores-%2300acee.svg?color=333&style=for-the-badge&logo=github&logoColor=white"
+            alt="Sample Image"
+            />
+          </Link>
       </Center>
     </Box>
   );

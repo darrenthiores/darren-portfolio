@@ -47,13 +47,13 @@ function Hero() {
             variants={item}
           >
             <Highlight
-              query="Profession"
+              query="Developer"
               styles={{
                 color: "palette.accent",
                 fontWeight: "black",
               }}
             >
-              Your Profession Here.
+              Mobile Developer.
             </Highlight>
           </Text>
           <Text
@@ -65,7 +65,7 @@ function Hero() {
             as={motion.p}
             variants={item}
           >
-            Bringing ideas to life through design and creativity.
+            Native Android and IOS.
           </Text>
           <HStack
             spacing="1rem"

@@ -6,6 +6,8 @@ import {
   HStack,
   Stack,
   Text,
+  Image,
+  Link
 } from "@chakra-ui/react";
 import React from "react";
 import { AiOutlineDownload } from "react-icons/ai";
@@ -14,6 +16,7 @@ import useObserver from "../../hooks/useObserver";
 import SectionTItle from "../../components/SectionTItle";
 import breakPoints from "../../utils/interfaces/Breakpoints";
 import container, { item } from "../../utils/motionVariants";
+import SampleImage from "../../assets/portfolio_images/me_photo.jpeg";
 
 function About() {
   const { ref } = useObserver("About");
@@ -40,14 +43,19 @@ function About() {
           flex={1}
           bg="white"
           w="20rem"
-          h="20rem"
+          h="30rem"
           borderRadius=".5rem"
           as={motion.div}
           variants={item}
         >
-          <Text color="palette.primary" fontFamily="inter">
-            You Image Here Maybe
-          </Text>
+          <Image
+            borderRadius=".3rem"
+            src={SampleImage}
+            alt="Sample Image"
+            w="100%"
+            h="100%"
+            objectFit="cover"
+          />
         </Center>
         <Center
           flexDir="column"
@@ -58,14 +66,15 @@ function About() {
           variants={item}
         >
           <Text fontFamily="inter" fontWeight="light" fontSize="1.1rem">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+          I am student of Binus University majoring in Computer Science and a Certified Associate Android Developer by Google. Love Android Development since the first time and keep building until now. 
+          I have published one app to google play store and built some projects. I also love to learn and shares about the newest technology on android.
           </Text>
-          <Button
+          <Link
+            fontFamily="inter"
+            href="https://drive.google.com/file/d/1u49HzwESGo3Fi4oJCZoBA2XRIcXo7Ydg/view?usp=sharing"
+            isExternal
+          >
+            <Button
             p="1.8rem 2.8rem 1.8rem 2rem"
             color="palette.accent"
             bg="transparent"
@@ -73,13 +82,12 @@ function About() {
             borderColor="palette.accent"
             fontSize="1.1rem"
             fontWeight="bold"
-            fontFamily="inter"
             leftIcon={<AiOutlineDownload />}
             borderTopRightRadius="5rem"
-            _hover={{}}
-          >
-            My Resume
-          </Button>
+            >
+              My Resume
+            </Button>
+          </Link>
         </Center>
       </Stack>
     </Box>
